@@ -9,7 +9,10 @@ fn main() {
     let first_number: f32 = first.parse().unwrap();
     let second_number: f32 = second.parse().unwrap();
     let result = operate(operator, first_number, second_number);
-    println!("{:?}", result);
+    println!(
+        "{:?}",
+        output(first_number, operator, second_number, result)
+    );
 }
 
 fn operate(operator: char, first_number: f32, second_number: f32) -> f32 {
@@ -24,4 +27,11 @@ fn operate(operator: char, first_number: f32, second_number: f32) -> f32 {
     } else {
         0.0
     }
+}
+
+fn output(first_number: f32, operator: char, second_number: f32, result: f32) -> String {
+    format!(
+        "{} {} {} = {}",
+        first_number, operator, second_number, result
+    )
 }
