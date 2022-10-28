@@ -1,9 +1,13 @@
 fn main() {
-    let s1 = String::from("hello from me");
+    let mut s = String::from("hello from me");
 
-    let len = first_word(&s1);
+    let word = first_word(&s);
 
-    println!("The first space of '{}' is at {}.", s1, len);
+    println!("The first space of '{}' is at {}.", s, word);
+
+    s.clear();//Compiler will catch the bug here
+
+    println!("The first word is {}", word);
 }
 
 fn first_word(s: &String) -> &str {
