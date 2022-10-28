@@ -1,12 +1,19 @@
 fn main() {
-    let s1 = String::from("hello");
+    let s1 = String::from("hello from me");
 
-    let len = calculate_length(&s1);
+    let len = first_word(&s1);
 
-    println!("The length of '{}' is {}.", s1, len);
+    println!("The first space of '{}' is at {}.", s1, len);
 }
 
-fn calculate_length(s: &String) -> usize { // s is a reference to a String
+fn first_word(s: &String) -> usize {
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return i;
+        }
+    }
+
     s.len()
-} // Here, s goes out of scope. But because it does not have ownership of what
-  // it refers to, it is not dropped.
+}
