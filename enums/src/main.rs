@@ -14,4 +14,7 @@ fn main() {
             Coin::Quarter => 25,
         }
     }
+
+    let penny = Coin::Penny;
+    println!("The coin is {}", value_in_cents(penny))
 }
