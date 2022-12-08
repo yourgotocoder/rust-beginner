@@ -1,9 +1,9 @@
+use std::collections::HashMap;
+
 fn main() {
     //Creating a new vector
-    let v: Vec<i32> = Vec::new();
-    let mut vec = Vec::new();
-    vec.push(5);
-    vec.push(2);
-    println!("{:?}", vec);
+    let mut scores = HashMap::new();
 
+    scores.insert(String::from("Blue"), 10);
+    scores.insert(String::from("Yellow"), 50);
 }
